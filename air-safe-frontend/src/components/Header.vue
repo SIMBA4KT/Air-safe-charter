@@ -1,7 +1,7 @@
 <template>
-  <header class="absolute top-0 left-0 right-0 z-50 flex items-center justify-around h-20 bg-slate-900 text-white px-8 shadow-2xl">
+  <header class="absolute top-0 left-0 right-0 z-50 flex flex-row items-center justify-around h-20 bg-slate-900 text-white px-8 shadow-2xl">
 
-    <nav class="flex flex-row justify-around max-w-3xl px-4">
+    <nav class="flex flex-row justify-end-safe max-w-3xl px-4">
       <div 
         v-for="page in navPages" 
         :key="page.id"
@@ -11,7 +11,7 @@
       </div>
     </nav>
 
-    <div class="flex items-center gap-4">
+    <div class="flex flex-row justify-end-items-center gap-4">
       <button class="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-bold transition-all transform hover:scale-105 border-2 border-white">
         ENQUIRE NOW
       </button>

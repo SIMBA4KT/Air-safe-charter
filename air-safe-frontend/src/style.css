@@ -64,12 +64,15 @@ h2 {
 }
 
 h1 {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
+    flex-wrap: wrap;
   }
 }
 h2 {
@@ -181,6 +184,7 @@ code {
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
     gap: 18px;
+    flex-wrap: wrap;
   }
 }
 
@@ -206,6 +210,7 @@ code {
   @media (max-width: 1024px) {
     flex-direction: row;
     text-align: center;
+    flex-wrap: wrap;
   }
 }
 

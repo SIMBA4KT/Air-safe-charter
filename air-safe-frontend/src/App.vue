@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import Header from '@/components/Header.vue'
 import MainSection from '@/components/Main section.vue'
 import SecondSection from '@/components/Second section.vue'
+import ThirdSection from '@/components/Third section.vue'
 
 
 const heroTitle = ref('Private Jet Charter Worldwide.')
@@ -24,14 +25,15 @@ const handleExplore = () => {
         <Header />
         <h1 class="text-white text-5xl font-bold">{{ heroTitle }}</h1>
         <p class="text-gray-200 mt-4">{{ heroSubtitle }}</p>
-
-        <MainSection />
-        <SecondSection />
         <button @click="handleExplore" class="mt-8 bg-amber-500 px-8 py-3 rounded-full">
           REQUEST A FLIGHT 
         </button>
       </div>
     </section>
+
+    <MainSection />
+    <SecondSection />
+    <ThirdSection />
   </div>
 </template>
 
