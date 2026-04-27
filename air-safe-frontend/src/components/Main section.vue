@@ -22,7 +22,7 @@ const searchData = ref({
         <button class="flex-1 px-6 py-4 text-left text-sm font-bold text-slate-700 hover:bg-gray-100 rounded-l-lg transition">
           FROM
         </button>
-        <div class="w-[1px] bg-gray-200 my-2"></div> <button class="flex-1 px-6 py-4 text-left text-sm font-bold text-slate-700 hover:bg-gray-100 rounded-r-lg transition">
+        <div class="w-1px bg-gray-200 my-2"></div> <button class="flex-1 px-6 py-4 text-left text-sm font-bold text-slate-700 hover:bg-gray-100 rounded-r-lg transition">
           TO
         </button>
       </div>
