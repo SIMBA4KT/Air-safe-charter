@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Header from '@/components/header2.vue'
+import SecondSection from '@/components/Second section.vue'
 
 
 
@@ -14,7 +15,8 @@ const handleExplore = () => {
 
 <template>
   <div>
-    <Header />
+    <Header :heroTitle="heroTitle" :heroSubtitle="heroSubtitle" />
+    <SecondSection />
   </div>
 </template>
 

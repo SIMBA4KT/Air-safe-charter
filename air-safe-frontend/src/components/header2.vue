@@ -2,6 +2,11 @@
 import { ref } from 'vue'
 import MainSection from './Main section.vue'
 
+const props = defineProps({
+  heroTitle: String,
+  heroSubtitle: String
+})
+
 const activePage = ref(0)
 const navPages = ref([
   { id: 0, name: 'SERVICES' },
@@ -43,6 +48,12 @@ const navPages = ref([
 
       <div class="header-bg">
         <img src="@/assets/BBJ-Select-737-7-FWD_lounge_A_serene.jpg" alt="Background">
+      </div>
+
+      <!-- Hero Title and Subtitle -->
+      <div class="hero-content">
+        <h1 class="hero-title">{{ heroTitle }}</h1>
+        <p class="hero-subtitle">{{ heroSubtitle }}</p>
       </div>
 
       <!-- Flight Booking Interface at bottom -->
@@ -160,10 +171,39 @@ const navPages = ref([
   object-fit: cover;
 }
 
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .booking-interface {
   position: absolute;
   bottom: 20px;
-  left: 2rem;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
   z-index: 15;
 }
 </style>

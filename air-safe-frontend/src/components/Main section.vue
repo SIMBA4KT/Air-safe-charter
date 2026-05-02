@@ -36,7 +36,7 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
 
 <template>
   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="Trip type group">
+    <div class="btn-group" role="group" aria-label="Trip type group">
       <button
         type="button"
         ref="boxRef"
@@ -55,14 +55,14 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
         </svg>
       </button>
     </div>
-    <div class="btn-group me-2" role="group" aria-label="Second group">
+    <div class="btn-group" role="group" aria-label="Second group">
       <button type="button" class="btn btn-secondary">FROM</button>
       <button type="button" class="btn btn-secondary">TO</button>
     </div>
     <div class="btn-group" role="group" aria-label="Third group">
       <button type="button" class="btn btn-secondary grey-btn">DEPARTURE</button>
     </div>
-    <div class="btn-group me-2" role="group" aria-label="Passengers group">
+    <div class="btn-group" role="group" aria-label="Passengers group">
       <button type="button" class="btn btn-secondary passenger-input">
         <span class="label">PASSENGERS</span>
         <span class="value-text">{{ passengerCount }}</span>
@@ -76,6 +76,26 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
         </svg>
       </button>
     </div>
+    <div class="btn-group" role="group" aria-label="Trip type group">
+      <button
+          type="button"
+          ref="boxRef"
+          class="btn custom-input-box"
+          :class="{ active: isFocused }"
+          @click="isFocused = true"
+        >
+          <span class="label">TRIP TYPE</span>
+          <span v-if="isFocused || tripType" class="value-text">
+            {{ tripType }}
+          </span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-icon" @click="toggleTripType">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+      </button>
+    </div>
+      
     <div class="btn-group" role="group" aria-label="Third group">
       <button type="button" class="btn btn-info show-estimates">SHOW ESTIMATES</button>
     </div>
@@ -105,7 +125,6 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
   border-color: #94a3b8;
 }
 
-/* The "TRIP TYPE" text */
 .label {
   display: block;
   font-size: 0.6rem;
@@ -119,7 +138,7 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
   color: #0f172a;
 }
 
-/* The "One Way" text */
+
 .value-text {
   margin-top: 0.1rem;
   color: #0f172a;
@@ -131,6 +150,16 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
 .btn-toolbar .btn {
   font-size: 0.75rem;
   color: #0f172a;
+  height: 30px;
+}
+
+.btn-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .grey-btn,
