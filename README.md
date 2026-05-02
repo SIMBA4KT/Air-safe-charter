@@ -14,7 +14,7 @@
 ## 🛠️ Tech Stack
 
   * **Frontend:** [Vue.js 3](https://vuejs.org/) (Composition API)
-  * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+  * **Styling:** [Tailwind CSS](https://tailwindcss.com/) and Bootstrap CSS
   * **Backend/Database:** [MongoDB](https://www.mongodb.com/) (via Node.js/Express or Firebase integration)
   * **State Management:** [Pinia](https://pinia.vuejs.org/)
   * **Language:** [TypeScript](https://www.typescriptlang.org/) / JavaScript
@@ -69,13 +69,18 @@ AirSafe Charter prioritizes data integrity. All aircraft listed must pass a stri
 
 -----
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-**SIMBA4KT**
+**JAMES SIMBA**
 
   * GitHub: [@SIMBA4KT](https://www.google.com/search?q=https://github.com/SIMBA4KT)
   * Role: Full-Stack Developer
+    
+**TRAVINNE MUTAHI**
+  * GitHub: [@Travinne](https://www.google.com/search?q=https://github.com/Travinne)
+  * Role: Full-Stack Developer, Co-Author
 
+  
 ## 📄 License
 
 This project is licensed under the MIT License.
