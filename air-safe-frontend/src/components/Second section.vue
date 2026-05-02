@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 
+const props = defineProps({
+  heroTitle: String,
+  heroSubtitle: String
+})
 </script>
 
 <template>
@@ -24,8 +28,13 @@ import { ref } from 'vue'
             DISCOVER MORE ABOUT US
         </button>
     </div>
-    <div>
-        <img src = "@/assets/BoeingMainFront.jpg" alt="Boeing Main Front" class="w-full h-auto rounded-lg shadow-lg mt-6">
+    <div class="relative inline-block mt-6">
+        <Header />
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20">
+            <h1 class="text-white text-5xl font-bold mb-4">{{ heroTitle }}</h1>
+            <p class="text-gray-200">{{ heroSubtitle }}</p>
+        </div>
+        <img src="@/assets/BoeingMainFront.jpg" alt="Boeing Main Front" style="width:350px; height:400px;" class="rounded-lg shadow-lg">
     </div>
 </template>
 
