@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const passengerCount = ref(2)
 
@@ -15,8 +15,11 @@ const decreasePassengers = () => {
 
 const isFocused = ref(false)
 const tripType = ref('One Way')
+const departureTimeMinutes = ref(8 * 60) // 08:00 AM in minutes
 
 const boxRef = ref(null)
+const timeBoxRef = ref(null)
+const isTimeFocused = ref(false)
 
 const toggleTripType = (event) => {
   event.stopPropagation()
@@ -24,9 +27,31 @@ const toggleTripType = (event) => {
   isFocused.value = true
 }
 
+// Convert minutes to time format (HH:MM AM/PM)
+const formatTime = (minutes) => {
+  const hours = Math.floor(minutes / 60) % 24
+  const mins = minutes % 60
+  const period = hours >= 12 ? 'PM' : 'AM'
+  const displayHours = hours % 12 || 12
+  return `${String(displayHours).padStart(2, '0')}.${String(mins).padStart(2, '0')}${period}`
+}
+
+const currentDepartureTime = computed(() => formatTime(departureTimeMinutes.value))
+
+const incrementTimeBy15Min = () => {
+  departureTimeMinutes.value = (departureTimeMinutes.value + 15) % (24 * 60)
+}
+
+const incrementTimeByHour = () => {
+  departureTimeMinutes.value = (departureTimeMinutes.value + 60) % (24 * 60)
+}
+
 const handleClickOutside = (event) => {
   if (boxRef.value && !boxRef.value.contains(event.target)) {
     isFocused.value = false
+  }
+  if (timeBoxRef.value && !timeBoxRef.value.contains(event.target)) {
+    isTimeFocused.value = false
   }
 }
 
@@ -79,21 +104,26 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
     <div class="btn-group" role="group" aria-label="Trip type group">
       <button
           type="button"
-          ref="boxRef"
+          ref="timeBoxRef"
           class="btn custom-input-box"
-          :class="{ active: isFocused }"
-          @click="isFocused = true"
+          :class="{ active: isTimeFocused }"
+          @click="isTimeFocused = true"
         >
-          <span class="label">TRIP TYPE</span>
-          <span v-if="isFocused || tripType" class="value-text">
-            {{ tripType }}
+          <span class="label">DEPARTURE TIME</span>
+          <span class="value-text">
+            {{ currentDepartureTime }}
           </span>
         </button>
-        <button type="button" class="btn btn-secondary btn-icon" @click="toggleTripType">
+        <button type="button" class="btn btn-secondary btn-icon" @click="incrementTimeBy15Min">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 0 .708-.708L8.707 3.5 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
           </svg>
-      </button>
+        </button>
+        <button type="button" class="btn btn-secondary btn-icon" @click="incrementTimeByHour">
+          <svg width="26" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <text x="3" y="13" font-size="12" font-weight="bold">HR</text>
+          </svg>
+        </button>
     </div>
       
     <div class="btn-group" role="group" aria-label="Third group">
@@ -206,6 +236,9 @@ onUnmounted(() => window.removeEventListener('click', handleClickOutside))
   border: 1px solid white;
   border-radius: 999px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-group .btn.btn-info.show-estimates:hover {

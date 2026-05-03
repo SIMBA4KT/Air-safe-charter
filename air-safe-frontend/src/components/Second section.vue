@@ -21,12 +21,12 @@ import { ref } from 'vue'
                     Our business model is simple: we're ready when you are. With countless domestic and international destinations, Access Jet Group makes private air travel more flexible,
                     accessible, and personal than ever before.
                 </p>
-                <button class="mt-4 bg-amber-500 text-white font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105">
-                    DISCOVER MORE ABOUT US
-                </button>
             </div>
             <div class="image-content">
                 <img src="@/assets/BoeingMainFront.jpg" alt="Boeing Main Front" class="section-image">
+                <button class="mt-4 bg-slate-900 text-white font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105">
+                    DISCOVER MORE ABOUT US
+                </button>
             </div>
         </div>
     </div>
@@ -53,8 +53,10 @@ import { ref } from 'vue'
 .image-content {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .section-image {
@@ -87,7 +89,8 @@ p {
 }
 
 button {
-    width: 100%;
+    width: auto;
+    min-width: 220px;
     padding: 0.75rem 1.5rem;
     transition: all 0.2s ease;
     font-size: 1rem;

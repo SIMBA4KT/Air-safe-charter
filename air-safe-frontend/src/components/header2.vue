@@ -83,6 +83,71 @@ const navPages = ref([
   gap: 1rem;
 }
 
+@media (max-width: 430px) {
+  .main-header {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto;
+    padding: 1rem 0.75rem 0.5rem;
+  }
+
+  .logo-wrapper,
+  .nav-links,
+  .action-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    order: 2;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .action-wrapper {
+    order: 3;
+    margin-top: 0.75rem;
+  }
+
+  .hero-content {
+    position: static;
+    transform: none;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 0 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .booking-interface {
+    position: static;
+    width: 100%;
+    padding: 0 0.75rem 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .main-header {
+    gap: 0.75rem;
+  }
+
+  .header-bg {
+    min-height: 420px;
+  }
+
+  .header-bg img {
+    object-position: center;
+  }
+}
+
 .logo-wrapper {
   flex: 0 0 auto;
   display: flex;
