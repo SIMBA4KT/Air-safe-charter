@@ -3,7 +3,7 @@
     <!-- Helper spacer to allow scrolling at the start -->
     <div class="spacer">GLOBAL FLEET ACCESS
         <h1>Global Access to Every Type of Fleet</h1>
-    <P>Access Jet Group ensures the right solution for every trip, anywhare inthe world.Our fleet access covers every aircraft cayegory, giving you the flexibility to choose exactly what suits your journey.</P>
+    <p>Access Jet Group ensures the right solution for every trip, anywhare inthe world.Our fleet access covers every aircraft cayegory, giving you the flexibility to choose exactly what suits your journey.</p>
     </div>
 
     <div
@@ -120,7 +120,7 @@ onMounted(() => {
   width: 160px;
   height: 100px;
   border-radius: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem;;
 }
 
 .box-text {
