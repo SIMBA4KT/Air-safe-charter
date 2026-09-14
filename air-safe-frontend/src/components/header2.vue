@@ -1,53 +1,60 @@
 <script setup>
-import { ref } from 'vue'
-import MainSection from './Main section.vue'
+import { ref } from "vue";
+import MainSection from "./Main section.vue";
 
 const props = defineProps({
   heroTitle: String,
-  heroSubtitle: String
-})
+  heroSubtitle: String,
+});
 
-const activePage = ref(0)
+const activePage = ref(0);
 const navPages = ref([
-  { id: 0, name: 'SERVICES' },
-  { id: 1, name: 'PRIVATE JET MODELS' },
-  { id: 2, name: 'DESTINATIONS' },
-  { id: 3, name: 'BLOG' },
-  { id: 4, name: 'OUR COMMITMENT' }
-])
-
+  { id: 0, name: "SERVICES" },
+  { id: 1, name: "PRIVATE JET MODELS" },
+  { id: 2, name: "DESTINATIONS" },
+  { id: 3, name: "BLOG" },
+  { id: 4, name: "OUR COMMITMENT" },
+]);
 </script>
 
 <template>
   <div class="header-container">
     <header class="main-header">
-      
       <!-- 1. Logo -->
       <div class="logo-wrapper">
-        <img src="@/assets/logo.png" alt="AirSafe Logo" class="logo-img">
+        <img src="@/assets/logo.png" alt="AirSafe Logo" class="logo-img" />
       </div>
 
       <!-- 2. Navigation Links -->
       <nav class="nav-links">
-        <div 
-          v-for="page in navPages" 
+        <div
+          v-for="page in navPages"
           :key="page.id"
           @click="activePage = page.id"
           :class="['nav-item', activePage === page.id ? 'active' : '']"
         >
           {{ page.name }}
-          <span v-if="['SERVICES', 'DESTINATIONS', 'BLOG', 'OUR COMMITMENT'].includes(page.name)" class="chevron">▾</span>
+          <span
+            v-if="
+              ['SERVICES', 'DESTINATIONS', 'BLOG', 'OUR COMMITMENT'].includes(
+                page.name,
+              )
+            "
+            class="chevron"
+            >▾</span
+          >
         </div>
       </nav>
       <!-- 3. Enquire Button -->
       <div class="action-wrapper">
-        <button class="enquire-btn">
-          ENQUIRE NOW
-        </button>
+        <button class="enquire-btn">ENQUIRE NOW</button>
       </div>
 
       <div class="header-bg">
-        <img src="@/assets/BBJ-Select-737-7-FWD_lounge_A_serene.jpg" alt="Background">
+        <img
+          src="@/assets/BBJ-Select-737-7-FWD_lounge_A_serene.jpg"
+          alt="Background"
+        />
       </div>
 
       <!-- Hero Title and Subtitle -->
@@ -172,7 +179,7 @@ const navPages = ref([
   cursor: pointer;
   font-size: 0.65rem;
   font-weight: 600;
-  color: #d1d5db;
+  color: #102a43;
   transition: color 0.3s;
   letter-spacing: 0.5px;
   padding-bottom: 0.25rem;
@@ -180,12 +187,12 @@ const navPages = ref([
 }
 
 .nav-item:hover {
-  color: #fbbf24;
+  color: #486581;
 }
 
 .nav-item.active {
-  color: #fbbf24;
-  border-bottom: 2px solid #fbbf24;
+  color: #102a43;
+  border-bottom: 2px solid #102a43;
 }
 
 .chevron {
