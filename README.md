@@ -1,4 +1,4 @@
-# Air-safe Charter ✈️
+# Air-safe Charter 
 
 **AirSafe Charter** is a premium, full-stack web application designed for booking and managing private jet charters. The platform focuses on security, real-time availability, and a seamless user experience for high-end travelers and operators.
 
