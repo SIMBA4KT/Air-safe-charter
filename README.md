@@ -2,7 +2,7 @@
 
 **AirSafe Charter** is a premium, full-stack web application designed for booking and managing private jet charters. The platform focuses on security, real-time availability, and a seamless user experience for high-end travelers and operators.
 
-## 🚀 Features
+##  Features
 
   * **Real-Time Flight Search:** Filter by destination, date, and passenger capacity.
   * **Dynamic Booking System:** Secure booking flow with instant confirmation.
@@ -11,7 +11,7 @@
   * **Responsive UI:** Fully mobile-optimized interface built for speed and accessibility.
   * **Secure Backend:** Robust data persistence and user authentication.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
   * **Frontend:** [Vue.js 3](https://vuejs.org/) (Composition API)
   * **Styling:** [Tailwind CSS](https://tailwindcss.com/) and Bootstrap CSS
@@ -19,7 +19,7 @@
   * **State Management:** [Pinia](https://pinia.vuejs.org/)
   * **Language:** [TypeScript](https://www.typescriptlang.org/) / JavaScript
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 1.  **Clone the repository:**
 
@@ -48,7 +48,7 @@
     npm run dev
     ```
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```text
 ├── src/
@@ -63,13 +63,13 @@
 └── package.json         # Project dependencies and scripts
 ```
 
-## 🛡️ Safety & Security
+##  Safety & Security
 
 AirSafe Charter prioritizes data integrity. All aircraft listed must pass a stringent safety verification process, which is handled via a dedicated backend validation layer and stored securely in MongoDB.
 
 -----
 
-## 👨‍💻 Authors
+##  Authors
 
 **JAMES SIMBA**
 
